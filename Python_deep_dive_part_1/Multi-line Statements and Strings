@@ -1,0 +1,243 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Conversion of lines of code into logical newlines interpreted by the compiler can be implicit or explicit\n",
+    "a = \"This is a \\nnew line.\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'This is a \\nnew line.'"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "This is a \nnew line.\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "b = \"This will appear \" \\\n",
+    "    \"on the same line\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'This will appear on the same line'"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "b"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "This will appear on the same line\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(b)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Explicit line breaks to break up the statement\n",
+    "def print_string(a, b, c):\n",
+    "    if len(a) > 1 \\\n",
+    "        and len(b) > 1 \\\n",
+    "            and len(c) > 1:\n",
+    "        print(\"a:{}, b:{}, c:{}\".format(a, b, c))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "c = \"This is not a new line\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "a:This is a \nnew line., b:This will appear on the same line, c:This is not a new line\n"
+     ]
+    }
+   ],
+   "source": [
+    "print_string(a, b, c)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Multi-line strings will not remove any non-printing characters and will instead print exactly what has been passed in.\n",
+    "# Multi line strings that will be shown to a user in a GUI is not ideal.\n",
+    "a = \"\"\" This is\n",
+    "    a new string\n",
+    "    split           over several lines.\"\"\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " This is\n    a new string\n    split           over several lines.\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# This also occurs in a functions as well:\n",
+    "\n",
+    "def my_func():\n",
+    "    a = \"\"\"This is a\n",
+    "    new line which will include the line break and a tab from the indentation.\"\"\"\n",
+    "    return a"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "This is a\n    new line which will include the line break and a tab from the indentation.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Now print the executed call function.\n",
+    "print(my_func())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# We can redefine the function to use explicit carriage returns in a single string to avoid this.\n",
+    "\n",
+    "def my_func():\n",
+    "    a = \"This is a\\nnew line and the string will contain\\ntwo line breaks.\"\n",
+    "    return a"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "This is a\nnew line and the string will contain\ntwo line breaks.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Now print the executed call function.\n",
+    "print(my_func())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    ""
+   ]
+  }
+ ],
+ "metadata": {},
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
