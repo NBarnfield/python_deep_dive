@@ -1,28 +1,31 @@
-class coffee:
-
-    def __init__(self, name: str, milk: str):
-        coffee.name = name
-        coffee.milk = milk
-
-    def brew(self):
-        print('---------------------------------')
-        print('You would like a {0} on {1} milk.'.format(coffee.name, coffee.milk))
+# class coffee:
+#
+#     def __init__(self, name: str, milk: str):
+#         coffee.name = name
+#         coffee.milk = milk
+#
+#     def brew(self):
+#         print('---------------------------------')
+#         print('You would like a {0} on {1} milk.'.format(coffee.name, coffee.milk))
 
 
 # Create the first object from the coffee class
-full_cream_latte = coffee('latte', 'full cream')
-full_cream_latte.brew()
+# full_cream_latte = coffee('latte', 'full cream')
+# full_cream_latte.brew()
 
 # Create the second object from the coffee class
-skim_flat_white = coffee('flat white', 'skim')
-skim_flat_white.brew()
+# skim_flat_white = coffee('flat white', 'skim')
+# skim_flat_white.brew()
 
 
 class Lighting:
 
     def __init__(self, name: str, colour: str):
-        Lighting.name = name
-        Lighting.colour = colour
+        self.name = name
+        self.colour = colour
+
+    def __str__(self):
+        return 'The {0} colour is {1}'.format(self.name, self.colour)
 
     def light_on(self):
         print('---------------------------------')
@@ -34,5 +37,6 @@ class Lighting:
 
 
 dmx_1 = Lighting('dmx_1', 'white')
-dmx_1.light_on()
-dmx_1.light_off()
+# dmx_1.light_on()
+# dmx_1.light_off()
+str(dmx_1)
